@@ -15,8 +15,9 @@ echo "Modifying the release-upgrades file..."
 # Comment out the line that starts with "Prompt=lts" (if exists)
 sudo sed -i '/^Prompt=lts/s/^/#/' /etc/update-manager/release-upgrades
 
-# Add "Prompt=normal" if not present
-sudo sed -i '/^#Prompt=normal/!a Prompt=normal' /etc/update-manager/release-upgrades
+# Remove any existing "Prompt=" line, and then add "Prompt=normal"
+sudo sed -i '/^Prompt=/d' /etc/update-manager/release-upgrades
+echo "Prompt=normal" | sudo tee -a /etc/update-manager/release-upgrades
 
 # Step 4: Run the upgrade command
 echo "Starting upgrade to version 24..."
