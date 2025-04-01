@@ -19,9 +19,3 @@ sudo sed -i 's/^Prompt=lts$/Prompt=normal/' /etc/update-manager/release-upgrades
 echo "Starting upgrade to version 24..."
 sudo do-release-upgrade -d
 
-# If the upgrade doesn't run automatically, use the following command:
-# sudo do-release-upgrade -d
-
-# Step 5: Reboot the system automatically after upgrade
-echo "Rebooting the system..."
-sudo reboot
