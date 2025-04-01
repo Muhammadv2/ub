@@ -21,6 +21,7 @@ sudo do-release-upgrade -d
 
 # If the upgrade doesn't run automatically, use the following command:
 # sudo do-release-upgrade -d
+
 # Step 5: Reboot the system automatically after upgrade
 echo "Rebooting the system..."
 sudo reboot
