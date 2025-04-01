@@ -20,6 +20,7 @@ while true; do
     echo -e "${RED}5) Reboot the system${NC}"
     echo -e "${YELLOW}6) Exit${NC}"
     
+    # برای خواندن ورودی کاربر
     read -p "$(echo -e ${BLUE}Enter your choice (1, 2, 3, 4, 5, or 6): ${NC})" choice
 
     case $choice in
