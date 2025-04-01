@@ -9,8 +9,8 @@ display_main_menu() {
     echo "1) Update and Upgrade Packages"
     echo "2) Install Update Manager Core"
     echo "3) Configure Release Upgrades"
-    echo "4) Perform Release Upgrade"
-    echo "5) Exit Script"
+    echo "4) Reboot System"
+    echo "5) Perform Release Upgrade"
     echo "========================================"
 }
 
@@ -39,14 +39,14 @@ while true; do
             read
             ;;
         4)
+            echo "Rebooting system..."
+            sudo reboot
+            ;;
+        5)
             echo "Starting release upgrade..."
             sudo do-release-upgrade
             echo "Done! Press Enter to continue..."
             read
-            ;;
-        5)
-            echo "Exiting script..."
-            exit 0
             ;;
         *)
             echo "Invalid option! Please select 1-5."
