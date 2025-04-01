@@ -9,13 +9,13 @@ sudo apt upgrade -y
 echo "Installing necessary tools for upgrading..."
 sudo apt install update-manager-core -y
 
-# Step 3: Configure the release-upgrades file
+# Step 3: Configure the release-upgrades file to enable upgrading to normal releases
 echo "Configuring the release-upgrades file..."
-sudo sed -i 's/^#Prompt=normal/Prompt=normal/' /etc/update-manager/release-upgrades
+sudo sed -i 's/^#Prompt=lts/Prompt=normal/' /etc/update-manager/release-upgrades
 
 # Step 4: Run the upgrade command
 echo "Starting upgrade to version 24..."
 sudo do-release-upgrade -d
 
-# If the upgrade doesn't run automatically, you can use the following command:
+# If the upgrade doesn't run automatically, use the following command:
 # sudo do-release-upgrade -d
