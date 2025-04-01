@@ -21,7 +21,8 @@ while true; do
     echo -e "${YELLOW}6) Exit${NC}"
     
     # برای خواندن ورودی کاربر
-    read -p "$(echo -e ${BLUE}Enter your choice (1, 2, 3, 4, 5, or 6): ${NC})" choice
+    echo -e "${BLUE}Enter your choice (1, 2, 3, 4, 5, or 6):${NC}"
+    read choice
 
     case $choice in
         1)
