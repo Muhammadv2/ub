@@ -9,9 +9,11 @@ sudo apt upgrade -y
 echo "Installing necessary tools for upgrading..."
 sudo apt install update-manager-core -y
 
-# Step 3: Configure the release-upgrades file to enable upgrading to normal releases
-echo "Configuring the release-upgrades file..."
-sudo sed -i 's/^#Prompt=lts/Prompt=normal/' /etc/update-manager/release-upgrades
+# Step 3: Modify the release-upgrades file
+echo "Modifying the release-upgrades file..."
+sudo sed -i '/^#Prompt=normal/s/^#//g' /etc/update-manager/release-upgrades  # Un-comment Prompt=normal
+sudo sed -i '/^Prompt=normal/d' /etc/update-manager/release-upgrades           # Remove existing Prompt=normal if it exists
+echo "Prompt=normal" | sudo tee -a /etc/update-manager/release-upgrades        # Add Prompt=normal
 
 # Step 4: Run the upgrade command
 echo "Starting upgrade to version 24..."
